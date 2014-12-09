@@ -6,7 +6,7 @@
  * Time: 11:59
  */
 App::uses('HttpSocket', 'Network/Http');
-
+App::uses('Datasource','Model/Datasource');
 /**
  * Class GoogleLocationSource
  * @property HttpSocket Http
