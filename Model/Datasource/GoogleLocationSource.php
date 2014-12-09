@@ -6,18 +6,17 @@
  * Time: 11:59
  */
 App::uses('HttpSocket', 'Network/Http');
-App::uses('Datasource','Model/Datasource');
+App::uses('DataSource','Model/Datasource');
 /**
  * Class GoogleLocationSource
  * @property HttpSocket Http
  */
-class GoogleLocation extends DataSource{
+class GoogleLocationSource extends DataSource{
 
     public $config = array(
         'client' => null,
         'signature'=>null,
         'sensor'=>false,
-        'database'=>null
     );
 
     public $description = 'Google Location API Datasource';
@@ -63,4 +62,8 @@ class GoogleLocation extends DataSource{
         }
         return array($model->alias => $res);
     }
-} 
+
+    public function listSources($data = null) {
+        return null;
+    }
+}
