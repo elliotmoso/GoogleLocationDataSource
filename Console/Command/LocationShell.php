@@ -19,6 +19,6 @@ class LocationShell extends AppShell{
     public function search(){
         $direction=$this->in('Insert Location: ');
         $out= $this->GoogleLocation->find('all',array('conditions'=>array('address'=>$direction)));
-        debug($out);
+        print_r($out);
     }
 } 
