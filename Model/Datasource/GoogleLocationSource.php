@@ -66,4 +66,11 @@ class GoogleLocationSource extends DataSource{
     public function listSources($data = null) {
         return null;
     }
+
+    public function query($method, $params, $Model) {
+        // you may customize this to your needs.
+        if (method_exists($this, $method)) {
+            return call_user_func_array(array($this, $method), $params);
+        }
+    }
 }
